@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>Javascript</title>
+    </head>
+<body>
+    <script>
+        var x = window.prompt("半径を入力してください。"),y = window.prompt("高さを入力してください。");
+        x = parseInt(x, 10),y = parseInt(y, 10);   
+        document.write("半径" + x + "、高さ" + y + "の円柱と円錐の体積と表面積を求めます。<br>");
+        var kei1={
+                q:function(x,y){
+                    var tyu = x * x *Math.PI * y;
+                    return tyu;
+                },
+                p:function(x,y){
+                    var sui = x * x * Math.PI * y / 3;
+                    return sui;
+                },
+                q2:function(x,y){
+                    var tyu2 =2*Math.PI*x*(x+y);
+                    return tyu2
+                    ;
+                },
+                p2:function(x,y){
+                    var sui2 =(Math.sqrt(Math.pow(x,2)+Math.pow(y,2)))*Math.PI* x;
+                    return sui2;
+                    }
+            }   
+        kei1.q2(x,y);
+        kei1.p2(x,y);
+        var tyu=kei1.q(x,y);
+        var sui=kei1.p(x,y);
+        var tyu2=kei1.q2(x,y);
+        var sui2=kei1.p2(x,y);
+        document.write("円柱の体積は" + tyu + "です。<br>円錐の体積は" + sui + "です。<br>");
+        document.write("円柱の表面積は" + tyu2+ "です。<br>円錐の表面積は" + sui2+ "です。");
+    </script>
+</body>
+</html>
